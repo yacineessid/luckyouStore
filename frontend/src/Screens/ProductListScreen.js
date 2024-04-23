@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { listProducts , deleteProduct , createProduct } from '../actions/productActions'
+import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
 
 
 const ProductListScreen = ({history ,  match}) => {
@@ -31,16 +32,16 @@ const productCreate = useSelector((state) => state.productCreate)
   const { userInfo} = userLogin
 
   useEffect(() => {
-    // dispatch ({type:PRODUCT_CREATE_RESET})
-    // if(!userInfo.isAdmin){
-    //   history.push ('/login')
-    // } 
-    // if(successCreate){
-    //   history.push (`/admin/product/${createdProduct._id}/edit`)
-    // }
-    // else {
+    dispatch ({type:PRODUCT_CREATE_RESET})
+    if(!userInfo.isAdmin){
+      history.push ('/login')
+    } 
+    if(successCreate){
+      history.push (`/admin/product/${createdProduct._id}/edit`)
+    }
+    else {
      dispatch (listProducts())
-    },
+    }},
 
    [dispatch ,history ,userInfo , successDelete ,successCreate , createdProduct])
      

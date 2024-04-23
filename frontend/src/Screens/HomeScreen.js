@@ -14,20 +14,20 @@ import { listProducts } from "../actions/productActions";
 
 const HomeScreen = ({match}) => {
   const keyword =  match.params.keyword
-
   const dispatch = useDispatch()
 
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
 
   useEffect(() => {
+    console.log(`products`, products);
     dispatch(listProducts(keyword))
   }, [dispatch , keyword])
 
   return (
     <>
   
-      <div style={{display:"flex", justifyContent:"space-between", marginTop:"40px"}}>
+      <div className="flex-sm-column" style={{display:"flex", justifyContent:"space-between", marginTop:"40px"}}>
       <h3 style={{color:'GrayText' ,marginTop:"120px" , lineHeight:'35px' }}>Get more Style with <br/> Luckyou accessories! </h3>
       <MDBCarousel>
       <MDBCarouselInner>

@@ -25,20 +25,22 @@ import Products from './Screens/Products'
 
 
 function App() {
-const products = useSelector(state =>state.productList.products)
+  const products = useSelector(state => state.productList.products)
+  console.log('products', products); // Add this line to check the value of 'products'
+  
   const [filter, setFilter] = useState("all")
-  const productList =(products)=>{
+  
+  const productList = (products) => {
     switch (filter) {
       case "men":
-        return products.filter(elm=>elm.gender===filter)
-        case "women":
-        return products.filter(elm=>elm.gender===filter)
-      
-    
+        return products.filter(elm => elm.gender === filter)
+      case "women":
+        return products.filter(elm => elm.gender === filter)
       default:
         return products;
     }
   }
+  
   return (
     <>
     <Router>

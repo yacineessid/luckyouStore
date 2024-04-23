@@ -27,16 +27,16 @@ const Header = ({setFilter}) => {
           </LinkContainer>
 
            
-          <Navbar.Toggle  aria-controls='basic-navbar-nav'   />
+          <Navbar.Toggle  aria-controls='basic-navbar-nav' className='mb-1'   />
           <Navbar.Collapse id='basic-navbar-nav' >
           <Route    render={({ history }) => <SearchBox  history={history} />} />
            <Nav className='ml-auto'>
          
            <LinkContainer style={{backgroundColor:'inherit'}} to='/products/men'>
-            <Button name="men" onClick={(e)=>setFilter(e.target.name)}>Men</Button>              
+            <Nav.Link name="men" onClick={(e)=>setFilter(e.target.name)}>Men</Nav.Link>              
             </LinkContainer>    
             <LinkContainer style={{backgroundColor:'inherit'}} to='/products/women'>
-            <Button name="women" onClick={(e)=>setFilter(e.target.name)}>Women </Button>
+            <Nav.Link name="women" onClick={(e)=>setFilter(e.target.name)}>Women </Nav.Link>
            
             </LinkContainer>
                 

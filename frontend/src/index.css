@@ -17,3 +17,15 @@ h2{
     padding: 00.1rem;
 }
 
+@media(max-width:575px){
+    .menu-toggle{
+        display: block !important;
+    }
+    .flex-sm-column{
+    flex-direction: column
+    }
+}
+
+.menu-toggle{
+   opacity: 0;
+}

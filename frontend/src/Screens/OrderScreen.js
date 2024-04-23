@@ -41,6 +41,11 @@ const OrderScreen = ({match}) => {
     order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
   )
   }
+ 
+
+
+  
+  
 
   useEffect(() => {
 

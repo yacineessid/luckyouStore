@@ -54,7 +54,7 @@ const ProfileScreen = ({ location, history }) => {
   }
 
   return (
-    <Row>
+    <Row style={{padding:"20px 0"}}>
       <Col md={3}>
         <h2>User Profile</h2>
         {message && <Message variant='danger'>{message}</Message>}
@@ -65,7 +65,7 @@ const ProfileScreen = ({ location, history }) => {
         ) : error ? (
           <Message variant='danger'>{error}</Message>
         ) : (
-          <Form onSubmit={submitHandler}>
+          <Form className='mb-3' onSubmit={submitHandler} >
             <Form.Group controlId='name'>
               <Form.Label>Name</Form.Label>
               <Form.Control
@@ -131,7 +131,7 @@ const ProfileScreen = ({ location, history }) => {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order) => (
+              {orders && orders.map((order) => (
                 <tr key={order._id}>
                   <td>{order._id}</td>
                   <td>{order.createdAt.substring(0, 10)}</td>
