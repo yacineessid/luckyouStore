@@ -7,7 +7,6 @@ const connectDB = async () => {
     await mongoose.connect('mongodb+srv://user:manunited@cluster0.auz66.mongodb.net/myFirstDatabase', {
       useUnifiedTopology: true,
       useNewUrlParser: true,
-      useCreateIndex: true,
     });
     
     console.log(`MongoDB Connected : ${mongoose.connection.host}`);
