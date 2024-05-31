@@ -33,7 +33,8 @@
     "npm-i": "0.0.2",
     "react-redux": "^7.2.4",
     "react-reveal": "^1.2.2",
-    "react-uikit": "0.0.8"
+    "react-uikit": "0.0.8",
+    "vercel": "^34.2.4"
   },
   "devDependencies": {
     "terser-brunch": "^4.0.0"

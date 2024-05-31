@@ -2,10 +2,32 @@
   "version": 2,
   "builds": [
     {
-      "src": "./server.js",
+      "src": "api/products.js",
       "use": "@vercel/node"
-    }],
+    },
+    {
+      "src": "api/users.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/orders.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/upload.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "frontend/build" }
+    }
+  ],
   "routes": [
-    { "src": "/(.*)", "dest": "/" }
+    { "src": "/api/products", "dest": "/api/products.js" },
+    { "src": "/api/users", "dest": "/api/users.js" },
+    { "src": "/api/orders", "dest": "/api/orders.js" },
+    { "src": "/api/upload", "dest": "/api/upload.js" },
+    { "src": "/(.*)", "dest": "/frontend/$1" }
   ]
 }
